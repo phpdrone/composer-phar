@@ -1,0 +1,10 @@
+pipeline:
+  build-and-push:
+    image: plugins/docker
+    repo: phpdrone/phar-composer
+    tags:
+      - latest
+    secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
+    when:
+      event: push
+      branch: master 
